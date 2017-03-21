@@ -1,0 +1,30 @@
+<html ng-app="app">
+<head>
+  <title></title>
+</head>
+
+<body ng-controller="appCtrl">
+
+  <div>{{'{{stars}}'}}</div>
+  <form action="/uploader" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" />
+  </form>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.min.js"></script>
+  <script>
+    var app = angular.module('app', ['ngResource']);
+
+    app.factory('Star', function($resource) {
+      return $resource('star/:id');
+    });
+    app.controller('appCtrl', function($scope, Star){
+      $scope.stars = Star.query();
+
+    });
+
+  </script>
+
+</body>
+</html>
