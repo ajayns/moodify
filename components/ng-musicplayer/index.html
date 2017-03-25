@@ -11,14 +11,14 @@
 <body ng-controller="appCtrl">
 
   <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
+    <nav id="nav-top">
+      <div class="nav-wrapper black">
         <a href="#!" class="brand-logo">Logo</a>
         <form id="search-bar">
           <div class="input-field">
             <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
+            <label class="label-icon" for="search"><i class="fa fa-search"></i></label>
+            <i class="fa fa-close material-icons"></i>
           </div>
         </form>
         <div></div>
@@ -27,25 +27,26 @@
   </div>
 
   <div class="navbar-fixed" id="nav-bottom">
-    <nav id="music-ctrl">
-      <div class="nav-wrapper row">
-        <img class="col s1" />
-        <div class="col s2">
-          Song Artist <br/>
-          Song Album
+    <nav id="music-player">
+      <div class="nav-wrapper black row">
+        <img class="col s1" src="src/img/blank.png"/>
+        <div class="col s2" id="nav-metadata">
+          Song Name <br/>
+          Song Artist
         </div>
-        <div class="col s6">
-          <div class="progress">
-            <div class="determinate" style="width: 70%"></div>
+        <div class="col s5">
+          <div class="progress player-seek grey darken-2">
+            <div class="determinate white" style="width: 10%"></div>
+            a
           </div>
         </div>
-        <div class="col s3">
+        <div class="col s2 player-ctrl">
           <i class="fa fa-step-backward"></i>
           <i class="fa fa-play"></i>
-          <i class="fa fa-pause"></i>
+    <!--      <i class="fa fa-pause"></i> -->
           <i class="fa fa-step-forward"></i>
         </div>
-        <div>
+        <div class="col s2 player-ctrl">
           <i class="fa fa-repeat"></i>
           <i class="fa fa-volume-up"></i>
         </div>
@@ -53,60 +54,8 @@
     </nav>
   </div>
 
-  <!--
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid row">
-      <div class="navbar-header col-md-3">
-        <a class="navbar-brand" href="#">
-          <img alt="Brand" src="">
-        </a>
-      </div>
-      <form class="navbar-form col-md-6">
-        <div class="form-group ">
-          <input type="text" class="form-control" placeholder="Search" ng-model="search" />
-        </div>
-      </form>
-      <div class="col-md-1">
 
-      </div>
-    </div>
-  </nav>
-
-  <nav class="navbar text-white navbar-inverse navbar-fixed-bottom">
-    <div class="container-fluid row">
-      <div class="col-md-3">
-        <div class="col-md-4">
-          <img/>
-        </div>
-        <div class="col-md-8">
-          <div class="">
-            Song Title <br>
-            Song Artist
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="col-md-9">
-          <div class="progress"></div>
-        </div>
-        <div class="col-md-3">
-          <div class="">
-            <i class="fa fa-step-backward"></i>
-            <i class="fa fa-play"></i>
-            <i class="fa fa-pause"></i>
-            <i class="fa fa-step-forward"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1">
-        <i class="fa fa-repeat"></i>
-        <i class="fa fa-volume-up"></i>
-      </div>
-    </div>
-  </nav>
--->
-
-  <div class="row">
+  <div class="row hide">
     <div class="col-md-12">
 
       <h5>Songs</h5>
@@ -125,7 +74,7 @@
 
   <br/>
 
-  <div class="row">
+  <div class="row hide">
     <div class="col-md-12">
       <sound-manager></sound-manager>
 

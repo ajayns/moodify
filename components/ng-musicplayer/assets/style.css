@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: #212626;
 }
 
 nav form {
@@ -17,8 +17,34 @@ nav form {
   float: none;
 }
 
+.player-seek {
+  margin-top: 30px;
+}
+
+.player-ctrl > .fa {
+  font-size: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.player-ctrl > .fa-play, .fa-pause {
+  font-size: 40px !important;
+}
+
+.brand-logo {
+  margin-left: 1em;
+}
+
 #nav-bottom {
   bottom: 0 !important;
   position: fixed;
+}
+
+#nav-metadata {
+  margin-top: 12px;
+  line-height: 20px;
+}
+
+#nav-top {
 }
 
