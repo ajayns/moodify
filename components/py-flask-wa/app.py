@@ -13,6 +13,10 @@ mongo = PyMongo(app)
 def index():
   return render_template("index.html")
 
+@app.route('/w')
+def webcam():
+  return render_template("webcam.html")
+
 @app.route('/hello')
 def hello():
   return "hello world"
@@ -49,10 +53,6 @@ def add_star():
 def upload_file():
   f = request.files['file']
   f.save(secure_filename('1'))
-  with open ("1", "r") as f:
-    data = f.readlines()
-  output = ''.join(data)
-  return output
 
 
 if __name__ == '__main__':
