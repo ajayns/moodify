@@ -7,6 +7,10 @@ nav form {
   width: 40vw;
 }
 
+h5 {
+  display: inline;
+}
+
 .text-white {
   color: white;
 }
@@ -17,23 +21,38 @@ nav form {
   float: none;
 }
 
+.large-icons {
+  font-size: xx-large !important;
+}
+
 .player-seek {
   margin-top: 30px;
 }
 
-.player-ctrl > .fa {
-  font-size: 32px;
-  padding-left: 8px;
-  padding-right: 8px;
+.player-ctrl > {
+
 }
 
-.player-ctrl > .fa-play, .fa-pause {
-  font-size: 40px !important;
+.material-icons {
+  cursor: pointer;
 }
 
 .brand-logo {
   margin-left: 1em;
 }
+
+.horizontal {
+  height: 120px;
+}
+
+.horizontal > .card-image > img {
+  height: 120px;
+}
+
+.card-stacked > .card-content {
+  padding: 1em;
+}
+
 
 #nav-bottom {
   bottom: 0 !important;
@@ -45,6 +64,4 @@ nav form {
   line-height: 20px;
 }
 
-#nav-top {
-}
 

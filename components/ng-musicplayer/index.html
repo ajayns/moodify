@@ -4,21 +4,23 @@
 <head>
   <title></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body ng-controller="appCtrl">
 
+  <sound-manager></sound-manager>
+
   <div class="navbar-fixed">
     <nav id="nav-top">
       <div class="nav-wrapper black">
-        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#!" class="brand-logo"><i class="material-icons">library_music</i>Logo</a>
         <form id="search-bar">
           <div class="input-field">
             <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="fa fa-search"></i></label>
-            <i class="fa fa-close material-icons"></i>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
           </div>
         </form>
         <div></div>
@@ -29,31 +31,65 @@
   <div class="navbar-fixed" id="nav-bottom">
     <nav id="music-player">
       <div class="nav-wrapper black row">
-        <img class="col s1" src="src/img/blank.png"/>
+        <img class="col s1" src="src/img/blank.png" />
         <div class="col s2" id="nav-metadata">
-          Song Name <br/>
-          Song Artist
+          {{ currentPlaying.title }} <br/> {{ currentPlaying.artist }}
         </div>
         <div class="col s5">
-          <div class="progress player-seek grey darken-2">
-            <div class="determinate white" style="width: 10%"></div>
-            a
+          <div class="progress player-seek grey darken-2" seek-track>
+            <div class="determinate white" ng-style="{width : ( progress + '%' ) }"></div>
           </div>
         </div>
-        <div class="col s2 player-ctrl">
-          <i class="fa fa-step-backward"></i>
-          <i class="fa fa-play"></i>
-    <!--      <i class="fa fa-pause"></i> -->
-          <i class="fa fa-step-forward"></i>
+        <div class="col s2 player-ctrl row">
+          <i class="material-icons col" prev-track>skip_previous</i>
+          <i ng-show="!isPlaying" class="material-icons col large-icons" play-music>play_arrow</i>
+          <i ng-show="isPlaying" class="material-icons col large-icons" pause-music>pause</i>
+          <i class="material-icons col" next-track>skip_next</i>
         </div>
-        <div class="col s2 player-ctrl">
-          <i class="fa fa-repeat"></i>
-          <i class="fa fa-volume-up"></i>
+        <div class="col s2 player-ctrl row">
+          <i class="material-icons col" repeat-music>repeat</i>
+          <i ng-show="!mute" class="material-icons col" mute-music>volume_up</i>
+          <i ng-show="mute" class="material-icons col" mute-music>volume_off</i>
         </div>
       </div>
     </nav>
   </div>
 
+  <div class="container row">
+    <div class="col s8">
+      <div class="card horizontal" ng-mouseover="songHover = true" ng-mouseleave="songHover = false" ng-repeat="song in songs | filter: search">
+        <div class="card-image">
+          <img src="src/img/blank.png">
+        </div>
+        <div class="card-stacked black text-white">
+          <div class="card-content">
+            <h5>{{ song.title }}</h5><br/>
+            <i>
+              {{ song.artist }}<br/>{{ song.album }}<br/>
+            </i>
+            <div class="right" ng-show="songHover">
+              <i class="material-icons" music-player add-song="song">playlist_add</i>
+              <i class="material-icons" music-player="play" add-song="song">play_arrow</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4 hide">
+      <ul class="collection with-header">
+        <li class="collection-header">
+          <h5>First Names</h5>
+        </li>
+        <li class="collection-item">
+          <div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+        </li>
+        <li class="collection-item">
+          <div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <div class="row hide">
     <div class="col-md-12">
@@ -76,7 +112,7 @@
 
   <div class="row hide">
     <div class="col-md-12">
-      <sound-manager></sound-manager>
+
 
       <p>
         Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
