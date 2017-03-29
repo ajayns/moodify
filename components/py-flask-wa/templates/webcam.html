@@ -15,14 +15,19 @@
     <input type=button value="Take Snapshot" onClick="takeSnapshot()">
   </form>
 
+  <form action="/uploader" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" />
+  </form>
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='webcam.min.js') }}"></script>
 
   <script>
     Webcam.set({
-      width: 320,
-      height: 240,
+      width: 640,
+      height: 480,
       image_format: 'jpeg',
       jpeg_quality: 90
     });
@@ -32,7 +37,7 @@
     function takeSnapshot() {
       Webcam.snap(function(data_uri) {
         document.getElementById('imgCont').innerHTML = '<img id="imgSnap" src="' + data_uri + '"/><button onClick="saveSnap()">Save Snap</button>';
-        console.log(data_uri);
+
       });
       console.log('snapped');
     }

@@ -53,6 +53,7 @@ def add_star():
 def upload_file():
   f = request.files['file']
   f.save(secure_filename('1'))
+  return "uploaded"
 
 
 if __name__ == '__main__':
