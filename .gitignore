@@ -2,3 +2,5 @@
 /temp/
 /components/py-flask-wa/env/
 /env/
+*.pyc
+.DS_Store
