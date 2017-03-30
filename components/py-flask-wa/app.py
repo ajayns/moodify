@@ -1,6 +1,7 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
+import base64
 
 app = Flask(__name__)
 
@@ -16,6 +17,13 @@ def index():
 @app.route('/w')
 def webcam():
   return render_template("webcam.html")
+
+@app.route('/img')
+def img():
+  i = request.query_string
+  f = open('a.png','wb')
+  f.write(i.decode('base64'))
+  return "success <img src='" + i + "'>"
 
 @app.route('/hello')
 def hello():

@@ -3,9 +3,19 @@
   <title></title>
 </head>
 
+<style>
+  .box {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+</style>
+
 <body ng-controller="appCtrl">
 
   <div>{{'{{stars}}'}}</div>
+  <div ng-repeat="x in stars">{{'{{x.name}}'}} <div data-ng-model="x.distance"></div></div>
+  <div class="box" ng-show="a"></div>
   <form action="/uploader" method="POST" enctype="multipart/form-data">
     <input type="file" name="file" />
     <input type="submit" />
@@ -21,7 +31,7 @@
     });
     app.controller('appCtrl', function($scope, Star){
       $scope.stars = Star.query();
-
+      $scope.a = 'a';
     });
 
   </script>
