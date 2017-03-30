@@ -15,7 +15,7 @@ mongo = PyMongo(app)
 # Setup routes
 @app.route('/')
 def index():
-  return
+  return render_template("music.html")
 
 @app.route('/music', methods=['GET'])
 def music():
