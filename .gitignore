@@ -1,3 +1,4 @@
 /node_modules/
 /temp/
-/components/py-flask-wa/env
+/components/py-flask-wa/env/
+/env/
