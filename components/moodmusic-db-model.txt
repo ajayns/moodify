@@ -1,0 +1,11 @@
+{ 
+  'songs' : [
+    {
+      'title': 'Track Name',
+      'album': 'Album Name',
+      'artist' : 'Artist Name',
+      'albumart' : 'URL to art jpg',
+      'url' : 'MP3 Source'
+    }
+  ]
+}
