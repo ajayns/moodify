@@ -57,6 +57,7 @@ h5 {
 #nav-bottom {
   bottom: 0 !important;
   position: fixed;
+  opacity: 0.75;
 }
 
 #nav-metadata {
@@ -64,4 +65,16 @@ h5 {
   line-height: 20px;
 }
 
-
+#bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -100;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(32px);
+}

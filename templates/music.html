@@ -11,6 +11,7 @@
 <body ng-controller="appCtrl">
 
   <sound-manager></sound-manager>
+  <img id="bg" ng-src="{{ '{{currentPlaying.albumart}}' }}" />
 
   <div class="navbar-fixed">
     <nav id="nav-top">
@@ -64,9 +65,7 @@
         <div class="card-stacked black text-white">
           <div class="card-content">
             <h5>{{ '{{song.title}}' }}</h5><br/>
-            <i>
-              {{ '{{song.artist}}' }}<br/>{{ '{{song.album}}' }}<br/>
-            </i>
+            {{ '{{song.artist}}' }}<br/>{{ '{{song.album}}' }}<br/>
             <div class="right" ng-show="songHover">
               <i class="material-icons" music-player add-song="song">playlist_add</i>
               <i class="material-icons" music-player="play" add-song="song">play_arrow</i>
