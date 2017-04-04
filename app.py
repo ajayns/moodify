@@ -22,7 +22,7 @@ def music():
   songs = mongo.db.songs
   output = []
   for s in songs.find():
-    output.append({'title' : s['name'], 'artist' : s['artist'], 'coverart' : s['coverart']})
+    output.append({'title' : s['title'], 'album': s['album'], 'artist' : s['artist'], 'albumart' : s['albumart'], 'url' : s['url']})
   return jsonify(output)
 
 @app.route('/emotion', methods=['GET', 'POST'])
