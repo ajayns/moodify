@@ -59,7 +59,7 @@
     <div class="col s8">
       <div class="card horizontal" ng-mouseover="songHover = true" ng-mouseleave="songHover = false" ng-repeat="song in songs | filter: search">
         <div class="card-image">
-          <img src="">
+          <img src="{{'{{song.albumart}}'}}">
         </div>
         <div class="card-stacked black text-white">
           <div class="card-content">
