@@ -1,0 +1,67 @@
+body {
+  background-color: #212626;
+}
+
+nav form {
+  margin-left: 20vw;
+  width: 40vw;
+}
+
+h5 {
+  display: inline;
+}
+
+.text-white {
+  color: white;
+}
+
+.v-center {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.large-icons {
+  font-size: xx-large !important;
+}
+
+.player-seek {
+  margin-top: 30px;
+}
+
+.player-ctrl > {
+
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.brand-logo {
+  margin-left: 1em;
+}
+
+.horizontal {
+  height: 120px;
+}
+
+.horizontal > .card-image > img {
+  height: 120px;
+}
+
+.card-stacked > .card-content {
+  padding: 1em;
+}
+
+
+#nav-bottom {
+  bottom: 0 !important;
+  position: fixed;
+}
+
+#nav-metadata {
+  margin-top: 12px;
+  line-height: 20px;
+}
+
+
