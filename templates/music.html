@@ -5,7 +5,7 @@
   <title>Music Player</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
 </head>
 
 <body ng-controller="appCtrl">
@@ -31,7 +31,7 @@
   <div class="navbar-fixed" id="nav-bottom">
     <nav id="music-player">
       <div class="nav-wrapper black row">
-        <img class="col s1" src="src/img/blank.png" />
+        <img class="col s1" src="" />
         <div class="col s2" id="nav-metadata">
           {{ '{{currentPlaying.title}}' }} <br/> {{ '{{currentPlaying.artist}}' }}
         </div>
@@ -59,7 +59,7 @@
     <div class="col s8">
       <div class="card horizontal" ng-mouseover="songHover = true" ng-mouseleave="songHover = false" ng-repeat="song in songs | filter: search">
         <div class="card-image">
-          <img src="src/img/blank.png">
+          <img src="">
         </div>
         <div class="card-stacked black text-white">
           <div class="card-content">
@@ -77,10 +77,15 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-resource.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-  <script src="{{ url_for('static', filename='angular-soundmanager2.js')}}"></script>
-  <script src="{{ url_for('static', filename='musicplayer-app.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/angular-soundmanager2.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/musicplayer-app.js')}}"></script>
 </body>
 
 </html>
