@@ -12,7 +12,7 @@
 
   <div id="cam-body">
     <div id="cam-container" ng-show="cam">
-      <div id="cam" class="card red"></div>
+      <div id="cam" class="card"></div>
       <div class="buttons">
         <button ng-click="snap()" class="btn-floating btn-large red">
           <i class="material-icons">camera_alt</i>
@@ -21,7 +21,7 @@
     </div>
 
      <div id="snap-container" ng-show="!cam">
-      <div id="snap" class="card red"><img ng-src="{{imgURI}}"/></div>
+      <div id="snap" class="card"><img ng-src="{{imgURI}}"/></div>
       <div class="buttons">
         <button class="btn-floating btn-large waves-effect waves-light red">
           <i class="material-icons">arrow_forward</i>

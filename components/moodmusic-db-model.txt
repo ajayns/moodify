@@ -4,6 +4,7 @@
       'title': 'Track Name',
       'album': 'Album Name',
       'artist' : 'Artist Name',
+      'mood' : 'Mood of music',
       'albumart' : 'URL to art jpg',
       'url' : 'MP3 Source'
     }
