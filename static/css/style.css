@@ -78,3 +78,26 @@ h5 {
   height: 100vh;
   filter: blur(32px);
 }
+
+
+#snap, #cam {
+  width: 640px;
+  height: 480px;
+}
+
+#cam-body > div {
+  margin-top: 10vh;
+}
+
+#cam-body {
+  margin: 0 auto;
+  width: 660px;
+}
+
+#cam-body > div > div {
+  margin: 10px;
+}
+
+.buttons > button {
+  left: 45%;
+}
