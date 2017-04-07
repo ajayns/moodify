@@ -1,0 +1,10 @@
+,artist,id,paths,title,acousticness,danceability,energy,instrumentalness,key,livenepathsss,loudness,mode,speechiness,tempo,time_signature
+0,['Alter Bridge'],1o9ydH6XyWboIFZIZSDXfj,/home/dhanush/Music/TestClass/Shed My Skin.mp3,['Shed My Skin'],0.000137,0.289,0.868,2.33e-06,0,0.583,-4.231,1,0.0577,138.861,4
+1,['Alter Bridge'],2h0qBK4pSWY6WlRym0xaEh,/home/dhanush/Music/TestClass/One Day Remains.mp3,['One Day Remains'],4.39e-05,0.405,0.988,4.26e-06,4,0.167,-3.441,1,0.276,139.05,4
+2,['Alter Bridge'],3UULkHdmLDqBDPmBYltoRE,/home/dhanush/Music/TestClass/Metalingus.mp3,['Metalingus'],9.05e-06,0.497,0.982,0.0,8,0.0939,-3.272,1,0.108,109.911,4
+3,['Alter Bridge'],4rgE0xiMwo4icKEa4w8Vun,/home/dhanush/Music/TestClass/The End Is Here.mp3,['The End Is Here'],0.000492,0.381,0.885,1.17e-05,0,0.0961,-5.368,1,0.114,144.003,4
+4,['Alter Bridge'],1PotmRJ9g0y6zLVbJMKeV2,/home/dhanush/Music/TestClass/Find the Real.mp3,['Find the Real'],2.24e-05,0.357,0.932,6.94e-06,1,0.113,-2.996,1,0.0908,75.11,4
+5,['Alter Bridge'],628uwDKU7LqR8C0o2KTTd7,/home/dhanush/Music/TestClass/Watch Your Words.mp3,['Watch Your Words'],4.61e-05,0.277,0.923,6.7e-05,6,0.129,-3.492,1,0.0663,159.358,4
+6,['Alter Bridge'],0T9tbj6zsRKLiUx06sbOWX,/home/dhanush/Music/TestClass/In Loving Memory.mp3,['In Loving Memory'],0.00718,0.29,0.634,8.26e-05,6,0.172,-5.95,1,0.0335,139.979,4
+7,['Alter Bridge'],20iv6eIFgXokinSmgAkVxS,/home/dhanush/Music/TestClass/Down to My Last.mp3,['Down to My Last'],0.000128,0.33,0.868,0.0,8,0.267,-3.662,1,0.0538,150.017,4
+8,['Alter Bridge'],3Gbyl3XZVeEcnFPiiPR09n,/home/dhanush/Music/TestClass/Open Your Eyes.mp3,['Open Your Eyes'],0.000284,0.179,0.904,1.13e-06,2,0.36,-3.95,1,0.0806,162.271,4
