@@ -7,6 +7,7 @@ app.controller('appCtrl', function($scope) {
     $scope.cam = false;
     Webcam.snap(function(data_uri) {
       $scope.imgURI = data_uri;
+      document.getElementById('imgIn').value = data_uri;
     });
   }
 

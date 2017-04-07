@@ -2,6 +2,7 @@
 from flask import Flask, jsonify, request, render_template, redirect
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
+import base64
 
 
 # Initialize app and database
@@ -35,8 +36,16 @@ def music():
 
 @app.route('/emotion', methods=['GET', 'POST'])
 def emotion():
-  mood = 'happy'
-  return redirect("/player?mood=" + mood)
+  img_data = request.form['img']
+  img_data = img_data[23:]
+
+  f = open("imageToSave.jpg", "wb")
+  f.write(img_data.decode('base64'))
+  f.close()
+
+  return 'success'
+  # mood = ''
+  # return redirect("/player?mood=" + mood)
 
 # Main
 if __name__ == '__main__':

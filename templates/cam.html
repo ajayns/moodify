@@ -21,15 +21,16 @@
     </div>
 
      <div id="snap-container" ng-show="!cam">
-      <div id="snap" class="card"><img ng-src="{{ '{{imgURI}}' }}"/></div>
-      <div class="buttons">
-        <button class="btn-floating btn-large waves-effect waves-light red">
+      <div id="snap" class="card"><img ng-src="{{ '{{imgURI}}' }}" id="snapImg"/></div>
+      <form class="buttons" action="/emotion" method="post">
+        <input name="img" class="hide" id="imgIn"/>
+        <button type="submit" class="btn-floating btn-large waves-effect waves-light red">
           <i class="material-icons">arrow_forward</i>
         </button>
         <button ng-click="retake()" class="btn-floating btn-large waves-effect waves-light red">
           <i class="material-icons">redo</i>
         </button>
-      </div>
+      </form>
     </div>
   </div>
 
