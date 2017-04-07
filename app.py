@@ -39,7 +39,7 @@ def emotion():
   img_data = request.form['img']
   img_data = img_data[23:]
 
-  f = open("imageToSave.jpg", "wb")
+  f = open("snap.jpg", "wb")
   f.write(img_data.decode('base64'))
   f.close()
 
