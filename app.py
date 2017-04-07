@@ -5,6 +5,7 @@ from werkzeug import secure_filename
 import base64
 from mood import main_func
 
+
 # Initialize app and database
 app = Flask(__name__)
 
@@ -40,8 +41,10 @@ def emotion():
   img_data = img_data[23:]
 
   f = open("snap.jpg", "wb")
-  f.write(img_data.decode('base64'))
+  f.write(base64.b64decode(img_data.encode('ascii')))
   f.close()
+
+
 
   mood = main_func()
   return redirect("/player?mood=" + mood)
