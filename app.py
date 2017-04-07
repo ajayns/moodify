@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, render_template, redirect
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
 import base64
-
+from mood import main_func
 
 # Initialize app and database
 app = Flask(__name__)
@@ -43,9 +43,8 @@ def emotion():
   f.write(img_data.decode('base64'))
   f.close()
 
-  return 'success'
-  # mood = ''
-  # return redirect("/player?mood=" + mood)
+  mood = main_func()
+  return redirect("/player?mood=" + mood)
 
 # Main
 if __name__ == '__main__':
