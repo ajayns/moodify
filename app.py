@@ -29,13 +29,14 @@ def cam():
 def music():
   songs = mongo.db.songs
   output = []
-  for s in songs.find():
+  for s in songs.find({'mood' : request.args.get("mood")}):
     output.append({'title' : s['title'], 'album': s['album'], 'artist' : s['artist'], 'albumart' : s['albumart'], 'url' : s['url']})
   return jsonify(output)
 
 @app.route('/emotion', methods=['GET', 'POST'])
 def emotion():
-  return
+  mood = 'happy'
+  return redirect("/player?mood=" + mood)
 
 # Main
 if __name__ == '__main__':
