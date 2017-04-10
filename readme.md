@@ -1,30 +1,37 @@
-# ACM Month of Code Project
+# Moodify
 
-A WebApp which uses a snapshot taken of the user to detect emotion and using this, generate a suitable music playlist.
+A WebApp which uses a snapshot taken of the user to detect emotion and using this, generate a suitable music playlist. This project was built for ACM Month Of Code, actual coding done in about 3 weeks. 
+
+## Implementation
+The Cam, Music Player, scripts for emotion recognition and Database were wired and wrapped up into a WebApp using Flask, using routes to use the Backend like an API while the frontend handles the user.
+
+Being an experimental setup built in such a short span of time, the user interface and flow would require multiple fixes before deployment.
 
 
 ## Installation
 You should have the following preinstalled:
 * OpenCV
 * MongoDB
+* [dlib Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 ) data files to be placed data/
+* Python 3 
 
 Preferably setup a Virtual Env and then you'll just need to install packages:
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
-Make sure you have MongoDB running to host the database. Also run a simple http server to serve the files folder at localhost:8000
+Make sure you have MongoDB running to host the database. Also run a simple http server to serve the files/ folder at localhost:8000
 
 ```bash
 cd files
-python -m SimpleHTTPServer
+python3 -m http.server
 ```
 
 
 Start the program
 ```bash
-python app.py
+python3 app.py
 ```
 
 Open the webapp from browser at localhost:5000
@@ -40,3 +47,10 @@ Open the webapp from browser at localhost:5000
 ### Backend
  * [Flask](http://flask.pocoo.org/) : A microframework for Python for Web App building
  * [OpenCV](http://opencv.org/) : Open source Computer Vision, used here for facial recognition, analysis and emotion identification.
+ * A few machine learning libraries used along with OpenCV such as dlib, NumPy, scikit
+
+## Individual Components
+* [ng-musicplayer](https://github.com/ajayns/ng-musicplayer) : The music player component built on AngularJS and Materialize.
+* [PyEmotionRecognition](https://github.com/dhanushkamath/PyEmotionRecognition) : The script used to detect the mood from an image using OpenCV and machine learning libraries.
+* [PyMusicMood](https://github.com/dhanushkamath/PyMusicMood) : For automatic classification of music into moods based on parameters extracted from Spotify API. 
+* Cam-App, Py-Flask-Wa : Initial code in setting up the Cam and Flask Server
