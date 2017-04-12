@@ -2,7 +2,9 @@
 <html ng-app="app">
 
 <head>
-  <title></title>
+  <title>ngMusicPlayer</title>
+
+  <!-- Styling -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css" />
@@ -10,15 +12,20 @@
 
 <body ng-controller="appCtrl">
 
+  <!-- Initalize SoundManager -->
   <sound-manager></sound-manager>
 
+  <!-- Background -->
+  <img id="bg" ng-src="{{currentPlaying.albumart}}" />
+
+  <!-- Navbar (Top) -->
   <div class="navbar-fixed">
     <nav id="nav-top">
       <div class="nav-wrapper black">
         <a href="#!" class="brand-logo"><i class="material-icons">library_music</i>Logo</a>
         <form id="search-bar">
           <div class="input-field">
-            <input id="search" type="search" required>
+            <input id="search" type="search" ng-model="search" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div>
@@ -28,10 +35,11 @@
     </nav>
   </div>
 
+  <!-- Music Player (Bottom) -->
   <div class="navbar-fixed" id="nav-bottom">
     <nav id="music-player">
       <div class="nav-wrapper black row">
-        <img class="col s1" src="src/img/blank.png" />
+        <img class="col s1" ng-src="{{ currentPlaying.albumart }}" />
         <div class="col s2" id="nav-metadata">
           {{ currentPlaying.title }} <br/> {{ currentPlaying.artist }}
         </div>
@@ -55,11 +63,12 @@
     </nav>
   </div>
 
+  <!-- Song Cards -->
   <div class="container row">
     <div class="col s8">
       <div class="card horizontal" ng-mouseover="songHover = true" ng-mouseleave="songHover = false" ng-repeat="song in songs | filter: search">
         <div class="card-image">
-          <img src="src/img/blank.png">
+          <img src="{{ song.albumart }}">
         </div>
         <div class="card-stacked black text-white">
           <div class="card-content">
@@ -76,7 +85,8 @@
       </div>
     </div>
 
-    <div class="col s4 hide">
+    <!--  [WIP] Playlist Feature
+    <div class="col s4">
       <ul class="collection with-header">
         <li class="collection-header">
           <h5>First Names</h5>
@@ -91,7 +101,7 @@
     </div>
   </div>
 
-  <div class="row hide">
+  <div class="row">
     <div class="col-md-12">
 
       <h5>Songs</h5>
@@ -110,7 +120,7 @@
 
   <br/>
 
-  <div class="row hide">
+  <div class="row">
     <div class="col-md-12">
 
 
@@ -152,11 +162,14 @@
       </ul>
     </div>
   </div>
+  -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-  <script src="dist/angular-soundmanager2.min.js"></script>
-  <script src="assets/app.js"></script>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="dist/angular-soundmanager2.min.js"></script>
+    <script src="assets/app.js"></script>
 </body>
 
 </html>
