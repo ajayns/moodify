@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, render_template, redirect
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
 import base64
-from mood import main_func
+# from mood import main_func
 
 
 # Initialize app and database
@@ -46,7 +46,7 @@ def emotion():
 
 
 
-  mood = main_func()
+  # mood = main_func()
   return redirect("/player?mood=" + mood)
 
 # Main
