@@ -17,21 +17,19 @@
     <!-- Cam module -->
     <div id="cam-container" ng-show="cam">
       <div id="cam" class="card"></div>
-      <div class="buttons">
-        <button ng-click="snap()" class="btn-floating btn-large red">
+      <button ng-click="snap()" class="btn-large black">
           <i class="material-icons">camera_alt</i>
-        </button>
-      </div>
+      </button>
     </div>
 
     <!-- Snapped module  -->
     <div id="snap-container" ng-show="!cam">
       <div id="snap" class="card"><img ng-src="{{imgURI}}" /></div>
-      <div class="buttons">
-        <button class="btn-floating btn-large waves-effect waves-light red">
+      <div class="buttons row">
+        <button class="btn-large black col s6">
           <i class="material-icons">arrow_forward</i>
         </button>
-        <button ng-click="retake()" class="btn-floating btn-large waves-effect waves-light red">
+        <button ng-click="retake()" class="btn-large black col s6">
           <i class="material-icons">redo</i>
         </button>
       </div>
