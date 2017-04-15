@@ -3,6 +3,7 @@
 /components/py-flask-wa/env/
 /env/
 /temp/
+/files/
 *.pyc
 .DS_Store
 snap.jpg
