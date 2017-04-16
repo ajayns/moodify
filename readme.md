@@ -14,26 +14,26 @@ You should have the following preinstalled:
 * MongoDB
 * [dlib Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 ) data files to be placed in data/
 * Haar Cascades data files to be placed in data/
-* Python 3 
+* Python 2 
 * files/mp3 and files/img store the music data and album art
 
 Preferably setup a Virtual Env and then you'll just need to install packages:
 
 ```bash
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Make sure you have MongoDB running to host the database. Also run a simple http server to serve the files/ folder at localhost:8000
 
 ```bash
 cd files
-python3 -m http.server 8000
+python -m SimpleHTTPServer
 ```
 
 
 Start the program
 ```bash
-python3 app.py
+python app.py
 ```
 
 Open the webapp from browser at localhost:5000
