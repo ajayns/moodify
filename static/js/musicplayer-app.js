@@ -14,17 +14,22 @@ function getQueryStrings() {
   return assoc;
 }
 
+// Get query variables and store mood
 var getQuery = getQueryStrings();
 var getMood = getQuery['mood'];
 
 var app = angular.module('app', ['angularSoundManager', 'ngResource']);
 
+// Resource service to GET songs
 app.factory('Music', function($resource) {
   return $resource('music?mood=' + getMood);
 });
 
 app.controller('appCtrl', function($scope, Music) {
+  // Save songs from DB
   $scope.songs = Music.query();
+
+  // Init variables
   $scope.isPlaying = false;
   $scope.songHover = false;
 

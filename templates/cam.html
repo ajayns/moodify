@@ -3,6 +3,7 @@
 
 <head>
   <title>Moodify</title>
+  <!-- Styling -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
@@ -10,7 +11,10 @@
 
 <body ng-controller="appCtrl">
 
+  <!-- Camera body -->
   <div id="cam-body">
+
+    <!-- Cam module -->
     <div id="cam-container" ng-show="cam">
       <div id="cam" class="card"></div>
       <div class="buttons">
@@ -20,10 +24,11 @@
       </div>
     </div>
 
-     <div id="snap-container" ng-show="!cam">
-      <div id="snap" class="card"><img ng-src="{{ '{{imgURI}}' }}" id="snapImg"/></div>
+    <!-- Snapped module  -->
+    <div id="snap-container" ng-show="!cam">
+      <div id="snap" class="card"><img ng-src="{{ '{{imgURI}}' }}" id="snapImg" /></div>
       <form class="buttons" action="/emotion" method="post">
-        <input name="img" class="hide" id="imgIn"/>
+        <input name="img" class="hide" id="imgIn" />
         <button type="submit" class="btn-floating btn-large waves-effect waves-light red">
           <i class="material-icons">arrow_forward</i>
         </button>
@@ -34,9 +39,7 @@
     </div>
   </div>
 
-
-
-
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='js/webcam.min.js')}}"></script>
