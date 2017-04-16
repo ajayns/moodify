@@ -84,6 +84,7 @@ h5 {
 #snap, #cam {
   width: 640px;
   height: 480px;
+  margin: 0 auto;
 }
 
 #cam-body > div {
@@ -92,13 +93,16 @@ h5 {
 
 #cam-body {
   margin: 0 auto;
-  width: 660px;
+  width: 640px;
 }
 
-#cam-body > div > div {
-  margin: 10px;
+#cam-container > .btn-large {
+  width: 640px;
+  border-radius: 0 !important;
 }
 
-.buttons > button {
-  left: 45%;
+.buttons > .btn-large {
+  border-radius: 0 !important;
 }
+
+
