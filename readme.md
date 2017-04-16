@@ -12,7 +12,8 @@ Being an experimental setup built in such a short span of time, the user interfa
 You should have the following preinstalled:
 * OpenCV
 * MongoDB
-* [dlib Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 ) data files to be placed data/
+* [dlib Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 ) data files to be placed in data/
+* Haar Cascades data files to be placed in data/
 * Python 3 
 * files/mp3 and files/img store the music data and album art
 
@@ -26,7 +27,7 @@ Make sure you have MongoDB running to host the database. Also run a simple http 
 
 ```bash
 cd files
-python3 -m http.server
+python3 -m http.server 8000
 ```
 
 

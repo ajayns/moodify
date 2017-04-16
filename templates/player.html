@@ -10,9 +10,8 @@
 
 <body ng-controller="appCtrl">
 
-
+  <sound-manager></sound-manager>
   <img id="bg" ng-src="{{ '{{currentPlaying.albumart}}' }}" />
-
 
   <div class="navbar-fixed">
     <nav id="nav-top">
@@ -25,12 +24,10 @@
             <i class="material-icons">close</i>
           </div>
         </form>
-        <div></div>
+
       </div>
     </nav>
   </div>
-
-  <sound-manager></sound-manager>
 
   <div class="navbar-fixed" id="nav-bottom">
     <nav id="music-player">
