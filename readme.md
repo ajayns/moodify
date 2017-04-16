@@ -14,6 +14,7 @@ You should have the following preinstalled:
 * MongoDB
 * [dlib Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2 ) data files to be placed data/
 * Python 3 
+* files/mp3 and files/img store the music data and album art
 
 Preferably setup a Virtual Env and then you'll just need to install packages:
 
