@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request, render_template, redirect
 from flask_pymongo import PyMongo
 from werkzeug import secure_filename
 import base64
-from mood import main_func
+# from mood import main_func
 
 
 # Initialize app and database
@@ -37,17 +37,10 @@ def music():
 
 @app.route('/emotion', methods=['GET', 'POST'])
 def emotion():
-  # Get img data
+
+  # Mod to run in Python 2
   img_data = request.form['img']
-  img_data = img_data[23:]
-
-  # Decode the img and save as snap.jpg
-  f = open("snap.jpg", "wb")
-  f.write(base64.b64decode(img_data.encode('ascii')))
-  f.close()
-
-  # Run script for emotion recognition
-  mood = main_func()
+  mood = 'happy' # Hardcoded mood
 
   return redirect("/player?mood=" + mood)
 
