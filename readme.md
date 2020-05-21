@@ -1,6 +1,6 @@
 # Moodify
 
-***(Not longer maintained)***
+***(No longer maintained)***
 
 A WebApp which uses a snapshot taken of the user to detect emotion and using this, generate a suitable music playlist. This project was built for ACM Month Of Code, actual coding done in about 3 weeks.
 
